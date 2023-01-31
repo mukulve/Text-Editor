@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap");
+
+.light {
+  --background: white;
+  --text: black;
+  --secondaryColor: #ddd;
+}
+
+.dark {
+  --background: black;
+  --text: white;
+  --secondaryColor: #ddd;
+}
+
+* {
+  font-family: "JetBrains Mono", monospace;
+  margin: 0;
+  padding: 0;
+  transition: all 0.1s ease-in-out;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+button {
+  background-color: var(--background);
+  border: none;
+  color: var(--text);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondaryColor);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text);
+}
+
+h1 {
+  font-size: 1.3rem;
+}
+
+nav,
+footer {
+  height: 30px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+footer .links {
+  display: flex;
+  gap: 1rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+svg {
+  fill: var(--text);
+  height: 25px;
+}
+
+.openFile {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.openFileHome {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 60px);
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.openFile svg,
+.openFileHome svg {
+  height: 20%;
+  fill: var(--secondaryColor);
+}
+
+.openFile svg:hover,
+.openFileHome svg:hover {
+  fill: var(--text);
+  cursor: pointer;
+}
+
+.recentFiles {
+  display: flex;
+  width: 100%;
+  overflow: auto;
+  overflow-y: hidden;
+  width: calc(100vw - 255px);
+}
+
+.selected {
+  color: var(--text);
+  fill: var(--text);
+}
+
+.unselected {
+  color: var(--secondaryColor);
+  fill: var(--secondaryColor);
+}
+
+.recentFiles button {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.1rem;
+  flex: 0 0 auto;
+}
+
+.openFile {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 60px);
+  justify-content: center;
+  text-align: center;
+  width: calc(100vw - 255px);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+textarea {
+  height: 90%;
+  /*width: calc(100vw - 255px - 2rem);*/
+  padding: 0.5rem;
+  line-height: 1.5;
+  border: none;
+  resize: none;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.textArea {
+  height: calc(100vh - 60px);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.tabLeft {
+  position: fixed;
+  background-color: var(--background);
+  z-index: 2;
+  top: 30px;
+  left: 15px;
+}
+
+.tabRight {
+  position: fixed;
+  background-color: var(--background);
+  z-index: 2;
+  top: 30px;
+  right: 15px;
+  height: calc(100vh - 60px);
+  width: 250px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+.tabRight svg {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  height: 100px;
+  width: 100px;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 5px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  position: fixed;
+  background-color: var(--background);
+  z-index: 2;
+  top: 30px;
+  right: 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabLeft,
+.explorer {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 250px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.tabLeft input,
+.explorer input {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0.2rem;
+  border: none;
+  border-bottom: 1px solid var(--text);
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.tabLeft button,
+.explorer button,
+.preview button {
+  text-align: left;
+  padding: 0.3rem;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+nav button,
+footer button {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: max-content;
+  padding: 0.5rem;
+  background-color: var(--background);
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media only screen and (max-width: 850px) {
+  .explorer {
+    justify-content: center;
+    align-items: center;
+    width: 5px;
+  }
+
+  .recentFiles {
+    width: calc(100vw - 10px);
+  }
+
+  .openFile {
+    width: calc(100vw - 10px);
+  }
+}
