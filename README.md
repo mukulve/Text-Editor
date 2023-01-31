@@ -1,2 +1,2 @@
-<h3 align="center">React Native Weather App</h3>
+<h3 align="center">Text Editor</h3>
 
